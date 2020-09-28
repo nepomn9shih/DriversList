@@ -1,0 +1,47 @@
+body {
+    background-color: #cb7f07;
+    font-family: Tahoma;
+}
+.article {
+    background-color: #00202e;
+    margin-top: 0;
+    
+    text-align: center;
+    color: white;
+}
+.info {
+    padding-left: 10px;
+}
+.driverTable {
+    display: table;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #4a9396;
+    box-sizing: border-box;
+    }
+.cellMin {
+    border: 2px solid  #00202e;
+    display: table-cell;
+    width: 5%;
+    text-align: center;
+}
+.cell {
+    border: 2px solid  #00202e;
+    display: table-cell;
+    width: 15%;
+}
+.cellLong {
+    border: 2px solid  #00202e;
+    display: table-cell;
+    width: 35%;
+}
+
+.pageHeader {
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid  #00202e;
+    margin-bottom: 10px;
+    background-color: #00202e;
+    color: white;
+    border-radius: 20px;
+}
