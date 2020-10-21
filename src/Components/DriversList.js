@@ -1,23 +1,33 @@
-import React from 'react';
-import Driver from './Driver'
+import React from 'react'
+import {Driver} from './Driver'
+import Pagination from 'react-js-pagination'
 
-function DriversList(){
-    
-    const [drivers, setDrivers] = React.useState([]);
+export const DriversList = props => {
+  const {
+    driversList,
+    driversListTotal,
+    driversListLimit,
+    handlePageChange,
+    activePage
+  } = props
  
-    React.useEffect(() => {
-        fetch('http://ergast.com/api/f1/drivers.json')
-        .then(response => response.json())
-        .then(result => setDrivers(result.MRData.DriverTable.Drivers))
-      }, []);
-    
-    return (
-        <div>
-        {drivers.map((driver, index) => {
-            return <Driver driverN={driver} key={driver.driverId} index={index+1}/>
-        })}
-        </div>
-    )
-}
-
-export default DriversList
+  return (
+    <div>
+      {driversList && driversList.map((driver, index) => (
+        <Driver key={driver.driverId} driver={driver} index={index+1} />
+      ))}
+      <div className="d-flex justify-content-center">
+      <Pagination
+        hideDisabled
+        activePage={activePage}
+        itemsCountPerPage={driversListLimit}
+        totalItemsCount={driversListTotal}
+        onChange={handlePageChange}
+        itemClass="page-item"
+        linkClass="page-link"
+       />
+      </div>
+      
+    </div>
+  );
+};

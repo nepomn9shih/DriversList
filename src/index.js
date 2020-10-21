@@ -3,14 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { Route, BrowserRouter } from 'react-router-dom';
-import About from './Components/About';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import 'bootstrap/dist/css/bootstrap.css'
+
+const history = createBrowserHistory()
 
 ReactDOM.render(
-    <BrowserRouter>
-      <Route exact path="/" component={App} />
-      <Route exact path="/about" component={About}/>
-    </BrowserRouter>,
+    <Router history={history}>
+      <App />
+    </Router>,
   document.getElementById('root')
 );
 
