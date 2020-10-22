@@ -1,9 +1,45 @@
+a {
+    color: #013766 !important;
+}
 
-
-.bg-primary, .btn-primary {
-    background-color: darkslategray;
+a:hover {
+    color: #AC0E28 !important;
+    text-decoration: none !important;
 }
 
 .col-1, .col-2, .col-5 {
     padding: 5px !important;
+}
+
+.bg-dang, .badge-dang {
+    background-color: #AC0E28 !important;
+}
+
+.bg-warn, .badge-warn {
+    background-color: #FECC50 !important;
+}
+
+.bg-prim {
+    background-color: #BC4558 !important;
+}
+
+.bg-blue {
+    background-color: #013766 !important;
+}
+
+.paginationStyle li a {
+    background-color: #343A40;
+    color: white !important;
+    border-color: #343A40;
+}
+
+.paginationStyle li a:hover {
+    background-color: #013766 ;
+    color: white !important;
+    border-color: #013766;
+}
+.paginationStyle li.active a {
+    background-color: #AC0E28 !important;
+    color: white !important;
+    border-color: #AC0E28 !important;
 }
