@@ -10,7 +10,7 @@ export const DriverPage = props => {
       {driver &&
         <div className='DriverPage'>
           <Link to={`/`}>
-              <span>Back</span>
+              <span className="badge badge-dark m-2 p-2"><bold>НАЗАД</bold></span>
           </Link>
           <Driver driver={driver}/>
         </div>

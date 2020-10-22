@@ -2,33 +2,32 @@ import React from 'react';
 import '../index.css';
 import { Link } from 'react-router-dom';
 
-export function Driver({driver, index}){
-    
+export function Driver({driver, index, activePage}){
+    let numberOfDriver = index + (activePage-1)*30
     return (
-        <div className="driverTable">
-            <div className="cellMin">
-                <h3 className="article">№:</h3>
-                <h3>{index}</h3>
+        <div className="row mx-2 flex-nowrap text-center card-group">
+            <div className="card bg-warning col-1 mb-2">
+                <h4 className="mt-4">{isNaN(numberOfDriver) ? '*' : numberOfDriver}</h4>
             </div>
-            <div className="cell">
-                <h3 className="article">Name:</h3>
-                <h3 className="info">
+            <div className="card col-2 mb-2">
+                <h5 className="card bg-danger text-white">Name:</h5>
+                <h5>
                 <Link to={`/driver/${driver.driverId}`}>
                     {driver.givenName} {driver.familyName}
-                </Link></h3></div>
-            <div className="cell">
-                <h3 className="article">Date of birth:</h3>
-                <h3 className="info">{new Date(driver.dateOfBirth).toDateString()}</h3>
+                </Link></h5></div>
+            <div className="card col-2 mb-2">
+                <h5 className="card bg-dark text-white">Date of birth:</h5>
+                <h5 className="info">{new Date(driver.dateOfBirth).toDateString()}</h5>
             </div>
-            <div className="cell">
-                <h3 className="article">Nationality:</h3>
-                <h3 className="info">{driver.nationality}</h3>
+            <div className="card col-2 mb-2">
+                <h5 className="card bg-dark text-white">Nationality:</h5>
+                <h5 className="info">{driver.nationality}</h5>
             </div>
-            <div className="cellLong">
-                <h3 className="article">Wikipedia link:</h3>
-                <h3 className="info">
-                    <a href='{driverN.url}'>{driver.url}</a>
-                </h3>
+            <div className="card col-5 mb-2">
+                <h5 className="card bg-primary text-white">Wikipedia link:</h5>
+                <h5 className="info">
+                    <a href={driver.url}>{driver.url}</a>
+                </h5>
             </div>
         </div>
     )

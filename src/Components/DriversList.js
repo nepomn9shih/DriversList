@@ -14,9 +14,9 @@ export const DriversList = props => {
   return (
     <div>
       {driversList && driversList.map((driver, index) => (
-        <Driver key={driver.driverId} driver={driver} index={index+1} />
+        <Driver key={driver.driverId} driver={driver} index={index+1} activePage={activePage}/>
       ))}
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center align-items-center mt-3">
       <Pagination
         hideDisabled
         activePage={activePage}

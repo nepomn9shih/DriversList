@@ -40,14 +40,12 @@ export default function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-      </header>
+    <div className="card bg-secondary p-2 my-2 mx-5">
       <PageHeader />
       {state.loading 
-          ? <span>Loading...</span> 
+          ? <span className="badge badge-warning m-2 p-2"><bold>LOADING...</bold></span> 
           : state.error !== null
-          ? <span>Error: {state.error}</span> 
+          ? <span className="badge badge-alert m-2 p-2"><bold>ERROR: {state.error}</bold></span> 
           : <Switch>
               <Route
                 path="/"
